@@ -233,15 +233,6 @@ const styles = StyleSheet.create({
     padding: 8,
     borderRadius: 8,
   },
-  closeModal: {
-    paddingVertical: 24,
-    paddingHorizontal: 24,
-    borderRadius: 3,
-    color: "#000",
-    elevation: 10,
-    fontWeight: "bold",
-    fontSize: 24,
-  },
   contentContainer: {
     paddingVertical: 12,
     paddingHorizontal: 20,
