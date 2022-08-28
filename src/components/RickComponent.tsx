@@ -44,7 +44,7 @@ const EmptyCharacter = {
   status: "",
 };
 
-function RMCharacter() {
+function RickComponent() {
   const [character, setCharacter] = useState<ICharacter[]>();
   const [showModal, setShowModal] = useState(false);
   const [selectedCharacter, setSelectedCharacter] =
@@ -76,7 +76,7 @@ function RMCharacter() {
                 setShowModal(true);
               }}
             >
-              <Box alignItems="center" mb={8} key={index}>
+              <Box alignItems="center" mb={8}>
                 <Box
                   maxW={"92%"}
                   rounded="lg"
@@ -90,6 +90,7 @@ function RMCharacter() {
                   _light={{
                     backgroundColor: "gray.50",
                   }}
+                  key={index}
                 >
                   <Box>
                     <AspectRatio w="100%" ratio={16 / 9}>
@@ -156,11 +157,14 @@ function RMCharacter() {
       <Modal animationType="fade" visible={showModal}>
         <View style={styles.modal}>
           <View style={styles.modalContainer}>
-            <VStack space={4} alignItems="center">
-              <Button onPress={() => setShowModal(!showModal)}>
-                <XCircle size={48} />
+            <HStack>
+              <Button
+                variant="unstyled"
+                onPress={() => setShowModal(!showModal)}
+              >
+                <XCircle color="#C4C4CC" size={48} />
               </Button>
-            </VStack>
+            </HStack>
             <View style={styles.contentContainer}>
               <Image
                 style={{ width: "100%", height: 200, borderRadius: 4 }}
@@ -241,8 +245,8 @@ const styles = StyleSheet.create({
   contentContainer: {
     paddingVertical: 12,
     paddingHorizontal: 20,
-    alignItems: "center",
+    alignItems: "flex-start",
   },
 });
 
-export default RMCharacter;
+export default RickComponent;
